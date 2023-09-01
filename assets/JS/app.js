@@ -1,28 +1,6 @@
 
 
 
-//Opgave 1: brug javascript til at oprette en ny array med alle ansatte over 30 år  log resultatet til konsollen som table
-
-
-
-
-
-
-//Opgave 2: brug javascript til at oprette en ny array med alle ansatte under 20 år  log resultatet til konsollen som table
-
-
-
-
-//Opgave 3: brug javascript til at oprette en ny array med alle kvindelige ansatte over 30 år  log resultatet til konsollen som table
-
-
-
-
-//Opgave 4: brug javascript til at oprette en ny array med alle ikke-binære ansatte over 20 år  log resultatet til konsollen som table
-
-
-// data array
-
 const myEmployees=[
     { navn: 'Alice', alder: 25, køn: 'Kvinde' },
     { navn: 'Bob', alder: 32, køn: 'Mand' },
@@ -77,6 +55,38 @@ const myEmployees=[
     { navn: 'Yannick', alder: 24, køn: 'Mand' },
     { navn: 'Zenia', alder: 29, køn: 'Kvinde' }
   ]
+  
 
-  // må gerne slettes
-  console.table(myEmployees);
+  
+  //Opgave 1: brug javascript til at oprette en ny array med alle ansatte over 30 år  log resultatet til konsollen som table
+  const ansatteOver30 = myEmployees.filter(function(ansat) {
+    return ansat.alder > 30;
+  });
+  
+  console.table(ansatteOver30);
+  
+  
+  //Opgave 2: brug javascript til at oprette en ny array med alle ansatte under 20 år  log resultatet til konsollen som table
+  const ansatteUnder20 = myEmployees.filter(function(ansat) {
+    return ansat.alder < 20;
+  });
+
+  console.table(ansatteUnder20);
+  
+  
+  
+  //Opgave 3: brug javascript til at oprette en ny array med alle kvindelige ansatte over 30 år  log resultatet til konsollen som table
+  
+  const kvindeligeOver30 = myEmployees.filter(function(ansat) {
+    return ansat.køn === 'Kvinde' && ansat.alder > 30;
+  });
+
+  console.table(kvindeligeOver30);
+  
+  
+  //Opgave 4: brug javascript til at oprette en ny array med alle ikke-binære ansatte over 20 år  log resultatet til konsollen som table
+  const ikkeBinære = myEmployees.filter(function(ansat) {
+    return ansat.køn === "Ikke-binær" && ansat.alder > 20;
+  });
+console.table(ikkeBinære);
+  
